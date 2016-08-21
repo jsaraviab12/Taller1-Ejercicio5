@@ -91,6 +91,11 @@ public class EJercicio5 extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
         jButton2.setForeground(new java.awt.Color(102, 0, 0));
         jButton2.setText("Borrar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 300, -1, -1));
 
         txtSueldob.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
@@ -157,6 +162,16 @@ public class EJercicio5 extends javax.swing.JFrame {
            
        }
     }//GEN-LAST:event_cmdCalcularActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        txtSueldob.setText("");
+        txtLpp.setText("");
+        txtSs.setText("");
+        txtSueldo.setText("");
+        txtCa.setText("");
+        txtSf.setText("");
+        txtSueldob.requestFocusInWindow();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
