@@ -18,6 +18,12 @@ public class EJercicio5 extends javax.swing.JFrame {
      */
     public EJercicio5() {
         initComponents();
+        txtLpp.setEditable(false); 
+        txtSs.setEditable(false);
+        txtSf.setEditable(false) ;
+        txtCa.setEditable(false); 
+        txtSueldo.setEditable(false);
+        
     }
 
     /**
@@ -99,6 +105,11 @@ public class EJercicio5 extends javax.swing.JFrame {
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 300, -1, -1));
 
         txtSueldob.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        txtSueldob.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSueldobKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtSueldob, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 100, -1));
 
         txtLpp.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
@@ -172,6 +183,17 @@ public class EJercicio5 extends javax.swing.JFrame {
         txtSf.setText("");
         txtSueldob.requestFocusInWindow();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtSueldobKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSueldobKeyTyped
+       char c=evt.getKeyChar();
+             
+         
+          if(!Character.isDigit(evt.getKeyChar()) &&evt.getKeyChar()!='.'){ 
+              getToolkit().beep(); 
+               
+              evt.consume(); 
+          }
+    }//GEN-LAST:event_txtSueldobKeyTyped
 
     /**
      * @param args the command line arguments
