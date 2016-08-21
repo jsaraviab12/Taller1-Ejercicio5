@@ -5,6 +5,8 @@
  */
 package interfaz;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Jesus
@@ -35,14 +37,14 @@ public class EJercicio5 extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        cmdCalcular = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        txtSueldob = new javax.swing.JTextField();
+        txtLpp = new javax.swing.JTextField();
+        txtSs = new javax.swing.JTextField();
+        txtCa = new javax.swing.JTextField();
+        txtSf = new javax.swing.JTextField();
+        txtSueldo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,31 +78,38 @@ public class EJercicio5 extends javax.swing.JFrame {
         jLabel7.setText("Sueldo final");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
-        jButton1.setText("jButton1");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, -1, -1));
+        cmdCalcular.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        cmdCalcular.setForeground(new java.awt.Color(0, 102, 0));
+        cmdCalcular.setText("Calcular");
+        cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCalcularActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 100, 30));
 
         jButton2.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
-        jButton2.setText("jButton2");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, -1, -1));
+        jButton2.setForeground(new java.awt.Color(102, 0, 0));
+        jButton2.setText("Borrar");
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 300, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 100, -1));
+        txtSueldob.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        jPanel1.add(txtSueldob, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 100, -1));
 
-        jTextField2.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 100, -1));
+        txtLpp.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        jPanel1.add(txtLpp, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 100, -1));
 
-        jTextField3.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 100, -1));
+        txtSs.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        jPanel1.add(txtSs, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 100, -1));
 
-        jTextField4.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 100, -1));
+        txtCa.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        jPanel1.add(txtCa, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 100, -1));
 
-        jTextField5.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 100, -1));
+        txtSf.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        jPanel1.add(txtSf, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 100, -1));
 
-        jTextField6.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 18)); // NOI18N
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, 120, -1));
+        txtSueldo.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 18)); // NOI18N
+        jPanel1.add(txtSueldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, 120, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,6 +124,39 @@ public class EJercicio5 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
+       String res1,res2,res3,res4,res5;
+       double sueldo,lpp=0,ss=0,sf=0,ca=0,suma=0,resta=0;
+       if(txtSueldob.getText().trim().isEmpty()){
+           JOptionPane.showMessageDialog(this,"Por favor dijite su sueldo base"," Error", JOptionPane.ERROR_MESSAGE);
+           txtSueldob.requestFocusInWindow();
+       }else{
+           try {
+          sueldo = Double.parseDouble(txtSueldob.getText());
+          lpp =(sueldo*1)/100;
+          ss  = (sueldo*4)/100;
+          sf  = (sueldo*0.5)/100;
+          ca  = (sueldo*5)/100;
+          suma = lpp + ss + sf + ca;
+          resta =sueldo-suma;
+       }catch (Exception e){
+               JOptionPane.showMessageDialog(this,"Ingrese numero valido","Error", JOptionPane.ERROR_MESSAGE);
+            txtSueldob.requestFocusInWindow();
+       }
+           res1=String.valueOf(lpp);
+           res2=String.valueOf(ss);
+           res3=String.valueOf(sf);
+           res4=String.valueOf(ca);
+           res5=String.valueOf(resta);
+           txtLpp.setText(res1);
+           txtSs.setText(res2);
+           txtSf.setText(res3);
+           txtCa.setText(res4);
+           txtSueldo.setText(res5);
+           
+       }
+    }//GEN-LAST:event_cmdCalcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,7 +194,7 @@ public class EJercicio5 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton cmdCalcular;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -162,11 +204,11 @@ public class EJercicio5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField txtCa;
+    private javax.swing.JTextField txtLpp;
+    private javax.swing.JTextField txtSf;
+    private javax.swing.JTextField txtSs;
+    private javax.swing.JTextField txtSueldo;
+    private javax.swing.JTextField txtSueldob;
     // End of variables declaration//GEN-END:variables
 }
